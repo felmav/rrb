@@ -1,0 +1,21 @@
+<%= form_for([@supplier, @supplier.products.build]) do |f| %>
+  <p>
+    <%= f.label :product_name %><br>
+    <%= f.text_field :product_name %>
+  </p>
+  <p>
+    <%= f.label :product_code %><br>
+    <%= f.text_field :product_code %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,49 @@
+
+<div class="sales-transaction-wrapper">
+
+	<h2>Sales</h2>
+
+	<div class="col-sm-6">
+		Suppliers: 
+		<select>
+			<option></option>
+			<% @suppliers.each do |supplier| %>
+				<option value="<%= supplier.id %>"><%= supplier.name %></option>
+			<% end %>
+		</select>
+		<br /><br />
+		<%= link_to 'Manage Suppliers', suppliers_path, :class => "btn" %>
+		<%= link_to 'Add New Supplier', new_supplier_path, :class => "btn" %>
+	</div>
+	<div class="col-sm-6">
+		Price: 
+		<select>
+			<option></option>
+			<option> <100 </option>
+			<option> >100 </option>
+		</select>
+	</div>
+
+	<div class="col-sm-12">
+		<div class="product-list">
+			<div class="pl-head pl-head-1">Product Code</div>
+			<div class="pl-head pl-head-2">Product Name</div>
+			<div class="pl-head pl-head-3">Price</div>
+			<div class="pl-head pl-head-4">Quantity</div>
+			<div class="pl-head pl-head-5">Actions</div>
+
+			<% @products.each do |product| %>
+				<div class="pl-text pl-text-1"><%= product.product_code %></div>
+				<div class="pl-text pl-text-2"><%= product.product_name %></div>
+				<div class="pl-text pl-text-3"><%= product.price %></div>
+				<div class="pl-text pl-text-4"><%= product.quantity %></div>
+				<div class="pl-text pl-text-5 action action-i">Show</div>
+				<div class="pl-text pl-text-5 action action-i">Edit</div>
+				<div class="pl-text pl-text-5 action action-i">Delete</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="col-sm-6 action action-o">
+	</div>
+</div>
